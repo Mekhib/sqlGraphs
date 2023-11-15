@@ -1,6 +1,6 @@
 ﻿@model sqlChartsDemo.Models.CartActivityModel;
 <div class="text-center">
-    <h1 class="display-4">Boscovs Data Center</h1>
+    <h1 class="display-4" style="color: black">Boscovs Data Center</h1>
 </div>
 <div class="container">
     <div class="row">
@@ -11,6 +11,9 @@
         </div>
         <div class="col">
             @{ @await Html.PartialAsync("~/Views/Home/PartialViews/_CartActivities.cshtml", Model) ; }
+        </div>
+        <div class="col" style="place-self: end">
+            @{ @await Html.PartialAsync("~/Views/Home/PartialViews/_salesBarChart.cshtml", Model) ; }
         </div>
     </div>
 

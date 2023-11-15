@@ -17,7 +17,7 @@ namespace sqlChartsDemo.Controllers
     {
         // GET: /<controller>/
         [HttpGet]
-        [Route("{chart}")]
+        [Route("Charts/InternetSales/{chart}")]
         public IActionResult InternetSales(string chart)
         {
 
