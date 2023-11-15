@@ -16,8 +16,32 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/Views/Charts/AllCharts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2hhcnRzL0FsbENoYXJ0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/Views/Charts/InternetSales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2hhcnRzL0ludGVybmV0U2FsZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/Views/Charts/InternetSalesBarGraph.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2hhcnRzL0ludGVybmV0U2FsZXNCYXJHcmFwaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/Views/Charts/PartialViews/_DataViewSelectorPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2hhcnRzL1BhcnRpYWxWaWV3cy9fRGF0YVZpZXdTZWxlY3RvclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/Views/Home/PartialViews/_CartActivities.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9QYXJ0aWFsVmlld3MvX0NhcnRBY3Rpdml0aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/Views/Home/PartialViews/_FactSquaresPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9QYXJ0aWFsVmlld3MvX0ZhY3RTcXVhcmVzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/Views/Home/Privacy.cshtml]

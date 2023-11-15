@@ -38,6 +38,22 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "ChartDirector.Net": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "ChartDirector.Net.Desktop.Controls": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "LiveCharts": {
+              "target": "Package",
+              "version": "[0.9.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Oracle.ManagedDataAccess": {
               "target": "Package",
               "version": "[21.11.0, )"

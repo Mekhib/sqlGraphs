@@ -1,0 +1,90 @@
+﻿@using Newtonsoft.Json.Linq;
+@{
+
+    dynamic headers = ViewBag.headers;
+    dynamic data = ViewBag.data;
+    dynamic fileName = ViewBag.fileName;
+
+
+}
+
+<html>
+<body>
+    <div class="text-center" style="padding: 40px;">
+        <h1 class="display-4">
+            Data View
+        </h1>
+        @{ @await Html.PartialAsync("~/Views/Charts/PartialViews/_DataViewSelectorPartial.cshtml", new { FileName = fileName})}
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                @{
+                    try
+                    {
+
+                        foreach (KeyValuePair<string, string> kvp in headers)
+                        {
+          
+                            <th>@kvp.Value.ToString()</th>
+                        }
+
+                    }
+
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("ex :" + ex);
+
+                        <p>ERROR in retrival of table Headers:  @ex.ToString();</p>
+                    }
+
+
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                try
+                {
+                    foreach (var obj in data)
+                    {
+
+                        <tr>
+                            @{ foreach (var field in obj)
+                                {
+
+                                    string? fieldValue = field.Value.ToString();
+                                    if (fieldValue.StartsWith("(") || fieldValue.StartsWith("-"))
+                                    {
+                                        <td style="color: red">@fieldValue</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@fieldValue</td>
+                                    }
+
+
+
+                                }
+
+                            }
+                        </tr>
+
+                    }
+
+                }
+
+                catch(Exception ex)
+{
+                                    Console.WriteLine("Errrr" + ex);
+                                    <p>Error in Value retrival: @ex</p>
+}
+
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>
+

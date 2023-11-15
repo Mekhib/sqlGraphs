@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using chartsDemo.SqlConn;
 using Microsoft.AspNetCore.Mvc;
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
@@ -19,33 +18,19 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        CartActivityModel cartActivites = new CartActivityModel();
+        cartActivites.Name = "Cart Activity";
+        cartActivites.CartAmounts = new int[] { 9857, 23657, 19456, 36456, 64567, 62387, 33780, 43567 };
+        cartActivites.TimePeriods = new string[] { "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep" };
+        cartActivites.RecoveredCartAmounts = new int[] { 2000, 3200, 1780, 1799 };
+        cartActivites.RecoveredTimePeriods = new string[] { "jun", "jul", "aug", "sep" };
+
+        return View(cartActivites);
     }
 
     public IActionResult Privacy()
     {
         return View();
-    }
-
-    public string Test()
-    {
-        OracleConnection conn = DBUtils.GetDBConnection();
-
-        Console.WriteLine("Get Connection: " + conn);
-        try
-        {
-            conn.Open();
-
-            Console.WriteLine(conn.ConnectionString, "Successful Connection");
-            return "connection: " + conn.ConnectionString;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("## ERROR: " + ex.Message);
-            Console.Read();
-            return "ERROR:" + ex.Message;
-        }
-
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

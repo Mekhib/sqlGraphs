@@ -12,4 +12,7 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/Users/mbrodie/.nuget/packages/" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgChartDirector_Net_Desktop_Controls Condition=" '$(PkgChartDirector_Net_Desktop_Controls)' == '' ">/Users/mbrodie/.nuget/packages/chartdirector.net.desktop.controls/7.1.0</PkgChartDirector_Net_Desktop_Controls>
+  </PropertyGroup>
 </Project>

@@ -8,11 +8,45 @@
     ".NETCoreApp,Version=v7.0": {
       "sqlChartsDemo/1.0.0": {
         "dependencies": {
+          "ChartDirector.Net": "7.1.0",
+          "ChartDirector.Net.Desktop.Controls": "7.1.0",
+          "LiveCharts": "0.9.7",
+          "Newtonsoft.Json": "13.0.3",
           "Oracle.ManagedDataAccess": "21.11.0",
           "System.Configuration.ConfigurationManager": "7.0.0"
         },
         "runtime": {
           "sqlChartsDemo.dll": {}
+        }
+      },
+      "ChartDirector.Net/7.1.0": {
+        "dependencies": {
+          "SkiaSharp": "2.88.3"
+        },
+        "runtime": {
+          "lib/net50/ChartDirector.Net.dll": {
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "ChartDirector.Net.Desktop.Controls/7.1.0": {
+        "dependencies": {
+          "ChartDirector.Net": "7.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ChartDirector.Net.Desktop.Controls.dll": {
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "LiveCharts/0.9.7": {
+        "runtime": {
+          "lib/net45/LiveCharts.dll": {
+            "assemblyVersion": "0.9.7.0",
+            "fileVersion": "0.9.7.0"
+          }
         }
       },
       "Microsoft.Win32.SystemEvents/7.0.0": {
@@ -31,6 +65,14 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
       "Oracle.ManagedDataAccess/21.11.0": {
         "dependencies": {
           "System.Text.Json": "6.0.1"
@@ -38,6 +80,46 @@
         "runtime": {
           "lib/net462/Oracle.ManagedDataAccess.dll": {
             "assemblyVersion": "4.122.21.1",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp/2.88.3": {
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Win32": "2.88.3",
+          "SkiaSharp.NativeAssets.macOS": "2.88.3"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.3.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.macOS/2.88.3": {
+        "runtimeTargets": {
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "rid": "osx",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Win32/2.88.3": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/libSkiaSharp.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libSkiaSharp.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
             "fileVersion": "0.0.0.0"
           }
         }
@@ -141,6 +223,27 @@
       "serviceable": false,
       "sha512": ""
     },
+    "ChartDirector.Net/7.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s1N6cBen2MxJVpI3mSXpUCGdpAKXoru/nTClVbO5Wk055BJyqqfLjiwa/7pSVZcliCOMrvZ2a6lEAPBcIEqlew==",
+      "path": "chartdirector.net/7.1.0",
+      "hashPath": "chartdirector.net.7.1.0.nupkg.sha512"
+    },
+    "ChartDirector.Net.Desktop.Controls/7.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HMVxEGtszGgn5GRqd1tQcWcCgAk0fAiXUWKkFLFWQyG9DA8PFgjr0g7ri5mayed8JZGvu9ptvApLizZCRLBgtw==",
+      "path": "chartdirector.net.desktop.controls/7.1.0",
+      "hashPath": "chartdirector.net.desktop.controls.7.1.0.nupkg.sha512"
+    },
+    "LiveCharts/0.9.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p4xyBrUaNNfkWZSNsIle0r51cyVyFg0Yi0uBRZM5GQtdFiA/7guZHlffFyNUILIdux10Ch2hUaJpcZENVU9aaQ==",
+      "path": "livecharts/0.9.7",
+      "hashPath": "livecharts.0.9.7.nupkg.sha512"
+    },
     "Microsoft.Win32.SystemEvents/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -148,12 +251,40 @@
       "path": "microsoft.win32.systemevents/7.0.0",
       "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
     },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
     "Oracle.ManagedDataAccess/21.11.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-N7E1UevG1xfbNaliOK6tdoyMqFAsHDTZWZEdBGvcA1qyu1epdVoZvUf2gmT8osURgB1+yBRAFADBAYTdfU2gIQ==",
       "path": "oracle.manageddataaccess/21.11.0",
       "hashPath": "oracle.manageddataaccess.21.11.0.nupkg.sha512"
+    },
+    "SkiaSharp/2.88.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GG8X3EdfwyBfwjl639UIiOVOKEdeoqDgYrz0P1MUCnefXt9cofN+AK8YB/v1+5cLMr03ieWCQdDmPqnFIzSxZw==",
+      "path": "skiasharp/2.88.3",
+      "hashPath": "skiasharp.2.88.3.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.macOS/2.88.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CEbWAXMGFkPV3S1snBKK7jEG3+xud/9kmSAhu0BEUKKtlMdxx+Qal0U9bntQREM9QpqP5xLWZooodi8IlV8MEg==",
+      "path": "skiasharp.nativeassets.macos/2.88.3",
+      "hashPath": "skiasharp.nativeassets.macos.2.88.3.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Win32/2.88.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MU4ASL8VAbTv5vSw1PoiWjjjpjtGhWtFYuJnrN4sNHFCePb2ohQij9JhSdqLLxk7RpRtWPdV93fbA53Pt+J0yw==",
+      "path": "skiasharp.nativeassets.win32/2.88.3",
+      "hashPath": "skiasharp.nativeassets.win32.2.88.3.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/7.0.0": {
       "type": "package",

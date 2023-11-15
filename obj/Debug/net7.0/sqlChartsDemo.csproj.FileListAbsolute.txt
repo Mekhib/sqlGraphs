@@ -41,3 +41,15 @@
 /Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll
 /Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/runtimes/win/lib/net7.0/System.Windows.Extensions.dll
 /Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/Oracle.ManagedDataAccess.dll
+/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/Utils/internetSales.json
+/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/ChartDirector.Net.dll
+/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/Newtonsoft.Json.dll
+/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/SkiaSharp.dll
+/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/runtimes/osx/native/libSkiaSharp.dylib
+/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/runtimes/win-arm64/native/libSkiaSharp.dll
+/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/runtimes/win-x64/native/libSkiaSharp.dll
+/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/runtimes/win-x86/native/libSkiaSharp.dll
+/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/ChartDirector.Net.Desktop.Controls.dll
+/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/LiveCharts.dll
+/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/Utils/30dayEmailChart.json
+/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/bin/Debug/net7.0/Utils/Report_1110_ Curbside_BOPUS Daily Report-SCHEDULED.json

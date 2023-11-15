@@ -1,0 +1,295 @@
+﻿@using System.Globalization;
+@model (Dictionary<string, List<int>>, List<string>)
+@using System.Linq;
+
+<html>
+<head>
+    <title>Stacked Bar Graph</title>
+    <!-- Include LiveCharts scripts and CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment/dist/chartjs-adapter-moment.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon/dist/chartjs-adapter-luxon.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon"></script>
+    <link href="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="text-center" style="padding: 40px;">
+        <h1 class="display-4">
+            Graph View
+
+        </h1>
+        @{ @await Html.PartialAsync("~/Views/Charts/PartialViews/_DataViewSelectorPartial.cshtml", new { FileName = ViewBag.fileName })};
+    </div>
+
+    <div style="display:grid">
+        <div id="yourChartDiv" style="height: 60vh; overflow:scroll; width: 160vh;
+       "></div>
+    </div>
+
+
+
+
+</body>
+
+
+</html>
+
+<script>
+
+    var data = @Json.Serialize(Model.Item1);
+     var storeNameData = @Json.Serialize(Model.Item2);
+   
+    var positiveDataSeries = [];
+    var negativeDataSeries = [];
+    var legendNamesSeries = [];
+
+    const createLegend = () => {
+        console.log(data)
+        var legendNamesSeries = [];
+
+        for (key in data) {
+     
+            legendNamesSeries.push(key);
+        }
+
+        return legendNamesSeries
+    }
+
+    const createNeg = () => {
+        var negativeDataSeries = [];
+
+        for (var key in data) {
+            var value = data[key];
+
+            console.log(key);
+
+            if (value.length != 0) {
+
+                value = value.filter(function (x) { return x < -1 });
+
+                var resultObj = {
+                    name: key,
+                    type: 'bar',
+                    stack: 'stack',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: value,
+                }
+
+                negativeDataSeries.push(resultObj);
+
+            }
+
+        }
+
+        return negativeDataSeries;
+
+    }
+
+
+    const createPos = () => {
+        var positiveDataSeries = [];
+
+        for (var key in data) {
+            var value = data[key];
+          
+            if (value.length != 0) {
+
+                value = value.filter(function (x) { return x > -1 });
+
+                var resultObj = {
+                    name: key,
+                    type: 'bar',
+                    stack: 'stack',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: value,
+                }
+
+                positiveDataSeries.push(resultObj);
+            }
+            else {
+                console.log("0 values ", value);
+            }
+
+        }
+
+   
+
+        return positiveDataSeries;
+
+    }
+
+
+  
+
+  
+    var categories = storeNameData;
+
+    // Initialize ECharts instance
+    var app = {};
+
+    var chartDom = document.getElementById('yourChartDiv');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    const posList = [
+        'left',
+        'right',
+        'top',
+        'bottom',
+        'inside',
+        'insideTop',
+        'insideLeft',
+        'insideRight',
+        'insideBottom',
+        'insideTopLeft',
+        'insideTopRight',
+        'insideBottomLeft',
+        'insideBottomRight'
+    ];
+    app.configParameters = {
+        rotate: {
+            min: -90,
+            max: 90
+        },
+        align: {
+            options: {
+                left: 'left',
+                center: 'center',
+                right: 'right'
+            }
+        },
+        verticalAlign: {
+            options: {
+                top: 'top',
+                middle: 'middle',
+                bottom: 'bottom'
+            }
+        },
+        position: {
+            options: posList.reduce(function (map, pos) {
+                map[pos] = pos;
+                return map;
+            }, {})
+        },
+        distance: {
+            min: 0,
+            max: 100
+        }
+    };
+    app.config = {
+        rotate: 90,
+        align: 'left',
+        verticalAlign: 'middle',
+        position: 'insideBottom',
+        distance: 15,
+        onChange: function () {
+            const labelOption = {
+                rotate: app.config.rotate,
+                align: app.config.align,
+                verticalAlign: app.config.verticalAlign,
+                position: app.config.position,
+                distance: app.config.distance
+            };
+            myChart.setOption({
+                series: [
+                    {
+                        label: labelOption
+                    },
+                    {
+                        label: labelOption
+                    },
+                    {
+                        label: labelOption
+                    },
+                    {
+                        label: labelOption
+                    }
+                ]
+            });
+        }
+    };
+    const labelOption = {
+        show: true,
+        position: app.config.position,
+        distance: app.config.distance,
+        align: app.config.align,
+        verticalAlign: app.config.verticalAlign,
+        rotate: app.config.rotate,
+        formatter: '{c}  {name|{a}}',
+        fontSize: 16,
+        rich: {
+            name: {}
+        }
+    };
+
+
+
+    // Configure the chart options
+    var option = {
+        grid: {
+            left: '0%',
+            right: '0%',
+            bottom: '0%',
+       
+            containLabel: true
+        },
+      
+        toolbox: {
+            show: true,
+            orient: 'horizontal',
+            left: 'center',
+            top: 'center',
+            top: "20",
+          
+            feature: {
+                mark: { show: true },
+             
+                magicType: { show: true, type: ['line', 'bar', 'stack'] },
+                restore: { show: true },
+                saveAsImage: { show: true }
+            }
+        },
+        legend: {
+            orient: 'horizontal',
+            left: 'center',
+            top: 'top',
+            center: 'center',
+            data: createLegend(),
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow',
+            },
+        },
+        xAxis: {
+            type: 'category',
+            data: categories,
+            axisTick: { show: false },
+        },
+        yAxis: {
+            type: 'value',
+        },
+        series: [
+            ...createPos(),
+            ...createNeg(),
+    
+
+
+        ],
+    };
+
+    // Set chart options
+    myChart.setOption(option);
+
+</script>

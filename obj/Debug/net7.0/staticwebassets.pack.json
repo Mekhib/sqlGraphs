@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets/sqlChartsDemo.bundle.scp.css"
     },
     {
+      "Id": "/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/wwwroot/css/charts.min.css",
+      "PackagePath": "staticwebassets/css/charts.min.css"
+    },
+    {
+      "Id": "/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/wwwroot/css/factSquares.css",
+      "PackagePath": "staticwebassets/css/factSquares.css"
+    },
+    {
       "Id": "/Users/mbrodie/Projects/sqlChartsDemo/sqlChartsDemo/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
