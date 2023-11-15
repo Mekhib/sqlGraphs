@@ -15,9 +15,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utils\" />
+    <Folder Include="Views\Home\PartialViews\" />
+    <Folder Include="Views\Charts\" />
+    <Folder Include="Views\Charts\PartialViews\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="ChartDirector.Net" Version="7.1.0" />
+    <PackageReference Include="LiveCharts" Version="0.9.7" />
     <PackageReference Include="Oracle.ManagedDataAccess" Version="21.11.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="ChartDirector.Net.Desktop.Controls" Version="7.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Home\PartialViews\" />
+    <None Remove="Views\Charts\" />
+    <None Remove="Views\Charts\PartialViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig" />
   </ItemGroup>
 </Project>

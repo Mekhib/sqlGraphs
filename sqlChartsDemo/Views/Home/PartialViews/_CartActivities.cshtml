@@ -1,0 +1,55 @@
+﻿@model sqlChartsDemo.Models.CartActivityModel;
+
+<div class="text-center">
+    <h1 class="display-4">
+        @Model.Name
+    </h1>
+</div>
+
+<div id="areaChart">
+    <table class="charts-css area show-labels show-data-axes" id="my-chart">
+        <ul class="charts-css legend legend-inline">
+            <li> Recovered </li>
+        </ul>
+        <tbody>
+            @{
+
+                var i = 0;
+
+                foreach (decimal data in Model.CartAmounts)
+                {
+                    Console.WriteLine("data" + data);
+                    decimal total = Model.CartAmounts.Sum();
+                    Console.WriteLine(total);
+                    decimal size = Math.Round(data / total, 3);
+                    Console.WriteLine("this is the size" + size);
+
+                    decimal start = 0;
+
+                    if (i == 0)
+                    {
+                        start = 0;
+                    }
+
+                    else
+                    {
+                        start = Math.Round(Model.CartAmounts[i - 1] / total, 3);
+                    }
+
+
+                    <tr>
+                        <th>@Model.TimePeriods[i]</th>
+                        <td style="--start: @start; --size: @size"> </td>
+                    </tr>
+
+                    i++;
+
+                };
+
+            }
+        </tbody>
+
+    </table>
+</div>
+
+
