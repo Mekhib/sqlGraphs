@@ -1,12 +1,13 @@
 ﻿@model sqlChartsDemo.Models.CartActivityModel;
 
-<div class="text-center">
-    <h1 class="display-4" style="color: black">
-        @Model.Name
-    </h1>
-</div>
 
-<div id="areaChart">
+
+<div id="areaChart" style="box-shadow: 0 0 0 1px hsla(0,0%,100%,0.5) inset, 0 0 0 2px hsla(0,0%,100%,0) inset, 0 0 0.75em hsl(0,0%,0%,0.3); padding: 19px; border-radius: 9px;">
+    <div class="text-center">
+        <h1 class="display-4" style="color: black">
+            @Model.Name
+        </h1>
+    </div>
     <table class="charts-css area show-labels show-data-axes" id="my-chart">
         <ul class="charts-css legend legend-inline">
             <li> Recovered </li>

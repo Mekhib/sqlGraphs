@@ -9,12 +9,16 @@
                 @{ @await Html.PartialAsync("~/Views/Home/PartialViews/_FactSquaresPartial.cshtml") ; }
             </div>
         </div>
-        <div class="col">
+        <div class="col" style="padding: 20px;">
             @{ @await Html.PartialAsync("~/Views/Home/PartialViews/_CartActivities.cshtml", Model) ; }
         </div>
-        <div class="col" style="place-self: end">
+        <div class="col" style="padding: 20px;">
             @{ @await Html.PartialAsync("~/Views/Home/PartialViews/_salesBarChart.cshtml", Model) ; }
         </div>
+        <div class="row" style="justify-content: center">
+            @{ @await Html.PartialAsync("~/Views/Home/PartialViews/_CircleChartsPartial.cshtml", Model) ; }
+        </div>
+
     </div>
 
    
